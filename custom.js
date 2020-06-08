@@ -16,10 +16,15 @@ const winningMessageElement = document.querySelector("#winningMessage");
 const restartButton = document.querySelector("#restartButton");
 const winningMessageTextElement = document.querySelector("[data-winning-message-text]");
 const nextTurn = document.querySelector("#turn");
-const playerScore = document.querySelector("score");
+const scorePlayerX = document.querySelector("#scoreX");
+const scorePlayerO = document.querySelector("#scoreO");
+
 let circleTurn;
+let scoreX = 0; 
+let scoreO = 0;
 
 startGame();
+updateScore();
 
 restartButton.addEventListener("click", startGame);
 
@@ -99,9 +104,14 @@ function checkWin(currentClass) {
     })
 }
 
-/*  TODO 
-function updateScore() {
+function updateScore() {   //FIXME  
 
+    scorePlayerX.innerText = scoreX;
+    scorePlayerO.innerText = scoreO;
+
+    if (circleTurn === X_CLASS) {
+        scorePlayerX.innerText = scoreX++;
+    } else if (circleTurn === CIRCLE_CLASS) {
+         scorePlayerO.innerText = scoreO++;
+    }
 }
-
-*/
