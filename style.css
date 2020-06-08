@@ -11,6 +11,18 @@ body {
     margin: 0;
 }
 
+.turn {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
 .board {
     width: 100vw;
     height: 100vh;

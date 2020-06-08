@@ -11,10 +11,11 @@ const WINNING_COMBINATIONS = [
     [2, 4, 6]
 ]
 const cellElements = document.querySelectorAll('[data-cell]');
-const board = document.getElementById("board");
-const winningMessageElement = document.getElementById("winningMessage");
-const restartButton = document.getElementById("restartButton");
+const board = document.querySelector("#board");
+const winningMessageElement = document.querySelector("#winningMessage");
+const restartButton = document.querySelector("#restartButton");
 const winningMessageTextElement = document.querySelector("[data-winning-message-text]");
+const nextTurn = document.querySelector("#turn");
 let circleTurn;
 
 startGame();
@@ -48,7 +49,6 @@ function handleClick(e){
     }    
 }
 
-
 function endGame(draw) {
     if (draw) {
         winningMessageTextElement.innerText = "Draw!";
@@ -81,9 +81,11 @@ function setBoardHoverClass() {
     board.classList.remove(X_CLASS);
     board.classList.remove(CIRCLE_CLASS);
     if(circleTurn) {
-        board.classList.add(CIRCLE_CLASS);  
+        board.classList.add(CIRCLE_CLASS);
+        nextTurn.innerText = "O's turn";  
     } else {
         board.classList.add(X_CLASS);
+        nextTurn.innerText = "X's turn"; 
     }
 }
 
