@@ -16,6 +16,7 @@ const winningMessageElement = document.querySelector("#winningMessage");
 const restartButton = document.querySelector("#restartButton");
 const winningMessageTextElement = document.querySelector("[data-winning-message-text]");
 const nextTurn = document.querySelector("#turn");
+const playerScore = document.querySelector("score");
 let circleTurn;
 
 startGame();
@@ -97,3 +98,10 @@ function checkWin(currentClass) {
         })
     })
 }
+
+/*  TODO 
+function updateScore() {
+
+}
+
+*/
